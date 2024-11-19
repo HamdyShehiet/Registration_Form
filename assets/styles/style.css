@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    border: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --bodyBgColor:linear-gradient(to right,rgb(90, 122, 228),rgba(99, 42, 110, 0.767));
+    --formBgColor:rgb(255, 255, 255);
+    --textLabelColor:#414040;
+    --inputColor:#363636;
+    --buttonBgColor:var(--bodyBgColor);
+    --hovColor:linear-gradient(to left,rgb(68, 91, 168),rgba(73, 20, 83, 0.767));
+    --buttonColor:rgb(252, 249, 249);
+    --shadowColor:#808080;
+    --borderColor:#dad8d8 ;
+}
+body{
+    background-image: var(--bodyBgColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+form{
+    background-color: var(--formBgColor);
+    max-width: 670px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 25px;
+    box-shadow: 1px 2px 4px  var(--shadowColor);
+    border-radius: 6px;
+}
+form h2{
+    color: var(--textLabelColor);
+}
+form .fields{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+form .fields .field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:5px;
+    width: calc(100% / 2 - 15px);
+    padding: 5px 0;
+}
+form .fields .field label{
+    font-size: .9em;
+    font-weight: 600;
+    color: var(--textLabelColor);
+}
+form .fields .field input{
+    width: 100%;
+    padding: 10px 6px;
+    border-radius: 6px;
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--inputColor);
+    border: 2px solid var(--borderColor);
+    overflow-x: hidden;
+}
+form  .gender-field{
+    width: calc(50% - 15px);
+}
+form .gender-field .gender-title{
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--textLabelColor);
+
+}
+form .gender-field .gender{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+form .gender-field .gender .male ,form .gender-field .gender .female{
+    display: inline-flex;
+    gap: 5px;
+}
+form .gender-field .gender input{
+    cursor: pointer;
+}
+form .gender-field .gender label{
+    font-size: .9em;
+    font-weight: 500;
+    color: var(--inputColor);
+}
+form input[type="submit"]{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    padding:5px;
+    font-size: 1em;
+    font-weight: 600;
+    background-image: var(--bodyBgColor);
+    color: var(--buttonColor);
+}
+form input[type="submit"]:hover{
+    background-image: var(--hovColor);
+    /* letter-spacing: 1px; */
+}
+@media screen  and (max-width:580px) {
+    form{
+        border-radius: 0px;
+    }
+    form .fields{
+        overflow-y: scroll;
+        height: 270px;
+    }
+    form .fields .field{
+        width:100%;
+    }
+}
+@media screen  and (max-width:390px) {
+    form .gender-field .gender{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
